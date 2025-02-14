@@ -1,1 +1,54 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CoC 7th Edition Investigator Sheet Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CoC 7th Edition Investigator Sheet Manager</h1>
+  </header>
+
+  <main>
+    <form id="investigatorForm">
+      <div class="form-group">
+        <label for="investigatorName">Investigator Name:</label>
+        <input type="text" id="investigatorName" name="investigatorName" required>
+      </div>
+      <div class="form-group">
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation">
+      </div>
+      <div class="form-group">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+      </div>
+      <div class="form-group">
+        <label for="pronoun">Pronoun:</label>
+        <input type="text" id="pronoun" name="pronoun">
+      </div>
+      <div class="form-group">
+        <label for="residence">Residence:</label>
+        <input type="text" id="residence" name="residence">
+      </div>
+      <div class="form-group">
+        <label for="birthplace">Birthplace:</label>
+        <input type="text" id="birthplace" name="birthplace">
+      </div>
+      <button type="submit">Save Investigator</button>
+    </form>
+
+    <!-- This container will display the investigator sheet after form submission -->
+    <div id="sheetContainer"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CoC Investigator Sheet Manager</p>
+  </footer>
+
+  <!-- Include the JavaScript file just before the closing body tag -->
+  <script src="script.js"></script>
+</body>
+</html>
