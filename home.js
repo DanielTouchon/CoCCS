@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Redirect to the investigator creation page
     addInvestigatorButton.addEventListener("click", () => {
-        window.location.href = "index.html";
+        window.location.href = "basic.html";
     });
 
     // Initial rendering of the investigator list

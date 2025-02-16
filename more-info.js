@@ -51,9 +51,54 @@ document.addEventListener('DOMContentLoaded', () => {
         // Clear current investigator from localStorage (not needed anymore)
         localStorage.removeItem("currentInvestigator");
 
-        // Redirect back to home.html
+        // Redirect back to home.html after saving
         alert("Investigator saved successfully!");
         window.location.href = "home.html";
     });
-    window.location.href = "home.html";
 });
+
+// Function to roll a stat and animate updates
+async function rollStat(statId) {
+    const inputField = document.getElementById(statId);
+    let sum = 0;
+    let displayText = "";
+
+    for (let i = 0; i < 3; i++) {
+        const roll = Math.floor(Math.random() * 6) + 1; // Roll 1-6
+        sum += roll;
+        
+        if (i > 0) {
+            displayText += " "; // Ensure space before "+"
+            inputField.value = displayText;
+            await delay(1400);
+            
+            displayText += "+ ";
+            inputField.value = displayText;
+            await delay(1400);
+        }
+
+        displayText += roll;
+        inputField.value = displayText;
+        await delay(1400);
+    }
+
+    displayText += ` = ${sum}`;
+    inputField.value = displayText;
+    await delay(1400);
+
+    let total = sum * 5;
+    displayText += ` * 5`;
+    inputField.value = displayText;
+    await delay(1400);
+    
+    displayText += ` * 5 = ${total}`;
+    inputField.value = displayText;
+    await delay(1400);
+    
+    inputField.value = total;
+}
+
+// Helper function for delay
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}

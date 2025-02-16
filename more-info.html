@@ -55,46 +55,6 @@
     <p>&copy; 2025 CoC Investigator Sheet Manager</p>
   </footer>
 
-  <script>
-    async function rollStat(statId) {
-      const inputField = document.getElementById(statId);
-      let sum = 0;
-      let displayText = "";
-
-      for (let i = 0; i < 3; i++) {
-        const roll = Math.floor(Math.random() * 6) + 1; // Roll 1-6
-        sum += roll;
-        
-        if (i > 0) {
-          displayText += " "; // Ensure space before "+"
-          inputField.value = displayText;
-          await new Promise(resolve => setTimeout(resolve, 1400)); // Wait 2 seconds
-          
-          displayText += "+ ";
-          inputField.value = displayText;
-          await new Promise(resolve => setTimeout(resolve, 1400)); // Wait 2 seconds
-        }
-
-        displayText += roll;
-        inputField.value = displayText;
-        await new Promise(resolve => setTimeout(resolve, 1400)); // Wait 2 seconds
-      }
-
-      displayText += ` = ${sum}`;
-      inputField.value = displayText;
-      await new Promise(resolve => setTimeout(resolve, 1400)); // Wait 2 seconds
-
-      let total = sum * 5;
-      displayText += ` * 5`
-      inputField.value = displayText
-      await new Promise(resolve => setTimeout(resolve, 1400)); // Wait 2 seconds
-      
-      displayText += ` * 5 = ${total}`;
-      inputField.value = displayText;
-      
-      await new Promise(resolve => setTimeout(resolve, 1400)); // Wait 2 seconds
-      inputField.value = total
-    }
-  </script>
+  <script src="more-info.js"></script>
 </body>
 </html>
